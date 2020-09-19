@@ -1,0 +1,44 @@
+<br />
+<div class="form">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label><br />
+      <input type="email" id="email" formControlName="email" />
+    </div>
+    <div>
+      <label for="firstname">First Name</label><br />
+      <input type="text" id="firstname" formControlName="firstname" />
+    </div>
+    <div>
+      <label for="lastname">Last Name</label><br />
+      <input type="text" id="lastname" formControlName="lastname" />
+    </div>
+    <div>
+      <label for="hiredate">Date Hired on</label><br />
+      <input type="date" id="email" formControlName="hiredate" />
+    </div>
+    <div>
+      <label for="loginkey">Login Key</label><br />
+      <input type="text" id="loginkey" formControlName="loginkey" />
+    </div>
+    <button class="btn" type="submit" [disabled]="!myForm.valid">Submit</button>
+  </form>
+</div>
+
+<style>
+  .form {
+    position: relative;
+    margin: 0 auto;
+    background: #ffffff;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+  }
+  .btn {
+    margin-left: 10px;
+  }
+  div {
+    margin: 10px;
+  }
+</style>

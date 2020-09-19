@@ -1,0 +1,33 @@
+<div>
+  <table style="width: 100%">
+    <tr>
+      <th>ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.firstname }}</td>
+      <td>{{ employee.lastname }}</td>
+      <td>{{ employee.email }}</td>
+      <td>
+        <button (click)="onDelete(employee.id)">Delete</button>
+        <button (click)="onEdit(employee.id)">Edit</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<style>
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  button {
+    margin: 5px;
+  }
+</style>
