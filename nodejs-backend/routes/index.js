@@ -8,9 +8,8 @@ router.post("/login", function (req, res, next) {
   db.execute("SELECT * FROM admins WHERE email = ?;", [req.body.email])
     .then((result) => {
       var user = result[0][0];
-      console.log("got user", user.email);
       if (user) {
-        if (req.body.password === user.password) {
+        if (req.body.password !== user.password) {
           return res.status(401).json({
             title: "An error occured",
             error: { message: "Invalid Login" },
